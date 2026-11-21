@@ -1,0 +1,470 @@
+/* Fathom: deep-ocean blue, a pixel sea in the frame. */
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url(fonts/funnel-display-latin.woff2) format("woff2");
+  font-weight: 300 800;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url(fonts/funnel-display-latin-ext.woff2) format("woff2");
+  font-weight: 300 800;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url(fonts/plex-mono-400-latin.woff2) format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url(fonts/plex-mono-500-latin.woff2) format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* Light: an ocean-blue frame around white pages. */
+.theme-light {
+  --app-shell: #263fa9;
+  --page-canvas: #fefefe;
+  --surface: #fefefe;
+  --surface-foreground: #060606;
+  --surface-raised: #fefefe;
+  --surface-hover: #f1f3f9;
+  --surface-selected: #e0e3f2;
+  --surface-selected-foreground: #060606;
+  --surface-border: #e0e0e0;
+  --foreground: #060606;
+  --card-foreground: #060606;
+  --popover-foreground: #060606;
+  --primary: #263fa9;
+  --primary-foreground: #fefefe;
+  --secondary: #f1f3f9;
+  --secondary-foreground: #162358;
+  --muted: #f1f3f9;
+  --muted-foreground: #4d5470;
+  --faint-foreground: #737a96;
+  --accent: #f1f3f9;
+  --accent-foreground: #060606;
+  --border: #e0e3f2;
+  --input: #c2c9e6;
+  --ring: #263fa9;
+  --sidebar: #f1f3f9;
+  --sidebar-foreground: #060606;
+  --sidebar-primary: #263fa9;
+  --sidebar-primary-foreground: #fefefe;
+  --sidebar-accent: #e0e3f2;
+  --sidebar-accent-foreground: #162358;
+  --sidebar-border: #e0e3f2;
+  --sidebar-ring: #263fa9;
+  --brand: #263fa9;
+  --brand-foreground: #fefefe;
+  --button-primary: #263fa9;
+  --button-primary-foreground: #fefefe;
+  --button-primary-border: #263fa9;
+  --destructive: #b42318;
+  --success: #1d6f48;
+  --warning: #a86200;
+  --info: #263fa9;
+  --chart-1: #263fa9;
+  --chart-2: #495eb7;
+  --chart-3: #6b7cc4;
+  --chart-4: #929fd3;
+  --chart-5: #c2c9e6;
+
+  --status-backlog: #929fd3;
+  --status-todo: #6b7cc4;
+  --status-in-progress: #c27c0e;
+  --status-in-review: #1d6f48;
+  --status-done: #263fa9;
+  --status-blocked: #b42318;
+  --status-cancelled: #9e9e9e;
+  --priority-urgent: #b42318;
+  --priority-high: #c2501a;
+  --priority-medium: #c27c0e;
+  --priority-low: #495eb7;
+  --priority-none: #929fd3;
+
+  --surface-shadow: none;
+  --page-shadow: none;
+  --page-border-color: transparent;
+  --menu-shadow: 0 8px 24px rgb(22 35 88 / 0.14), 0 1px 2px rgb(22 35 88 / 0.08);
+  --floating-shadow: 0 24px 56px rgb(22 35 88 / 0.24), 0 2px 6px rgb(22 35 88 / 0.1);
+  --floating-border-color: #c2c9e6;
+  --tooltip: #162358;
+  --tooltip-foreground: #fefefe;
+  --tooltip-shadow: none;
+
+  --rail-item-color: #e0e3f2;
+  --rail-item-hover-background: #e0e3f2;
+  --rail-item-active-background: #fefefe;
+  --rail-item-active-color: #263fa9;
+  --nav-item-color: #2e3450;
+  --nav-item-hover-background: #e0e3f2;
+  --nav-item-hover-color: #060606;
+  --nav-item-active-background: #263fa9;
+  --nav-item-active-color: #fefefe;
+  --menu-item-hover-background: #e0e3f2;
+  --menu-item-hover-color: #060606;
+  --display-chip-pressed-background: #263fa9;
+  --display-chip-pressed-color: #fefefe;
+  --switch-checked-background: #263fa9;
+
+  --issue-row-hover-background: #f1f3f9;
+  --issue-row-selected-background: #e0e3f2;
+  --issue-row-identifier-color: #4d5470;
+  --issue-group-header-background: #f1f3f9;
+  --issue-group-header-hover-background: #e0e3f2;
+  --board-column-background: #f1f3f9;
+  --board-card-background: #fefefe;
+  --board-card-hover-background: #fefefe;
+  --board-card-border-color: #e0e3f2;
+  --board-card-shadow: none;
+
+  --link-color: #263fa9;
+  --link-decoration-color: color-mix(in srgb, #263fa9 35%, transparent);
+  --mention-color: #263fa9;
+  --highlight-background: #e0e3f2;
+  --blockquote-border-color: #263fa9;
+  --blockquote-color: #4d5470;
+  --hr-color: #e0e3f2;
+  --table-border-color: #e0e3f2;
+  --table-header-background: #f1f3f9;
+  --table-header-color: #162358;
+  --table-row-hover-background: #f1f3f9;
+
+  --code-background: #f1f3f9;
+  --code-border-color: #e0e3f2;
+  --code-color: #263fa9;
+
+  /* Terminal code blocks: navy, like a command line set into the sea. */
+  --code-block-background: #1e3180;
+  --code-block-border: 1px solid #1e3180;
+  --code-block-color: #fefefe;
+  --code-keyword: #c2c9e6;
+  --code-string: #9fe0bd;
+  --code-comment: #a9b3e0;
+  --code-number: #ffd58a;
+  --code-function: #e0e3f2;
+  --code-property: #c2c9e6;
+  --code-variable: #fefefe;
+  --code-type: #c2c9e6;
+  --code-deletion: #ffb3a8;
+  --code-tag: #c2c9e6;
+  --code-punctuation: #a9b3e0;
+}
+
+/* Dark: a night sea, navy all the way down. */
+.theme-dark {
+  --app-shell: #111a44;
+  --page-canvas: #0d1333;
+  --surface: #121a40;
+  --surface-foreground: #f1f3f9;
+  --surface-raised: #162050;
+  --surface-hover: #182458;
+  --surface-selected: #1e3180;
+  --surface-selected-foreground: #fefefe;
+  --surface-border: #233172;
+  --foreground: #f1f3f9;
+  --card-foreground: #f1f3f9;
+  --popover-foreground: #f1f3f9;
+  --primary: #e0e3f2;
+  --primary-foreground: #0f1634;
+  --secondary: #182458;
+  --secondary-foreground: #f1f3f9;
+  --muted: #121a40;
+  --muted-foreground: #a9b3e0;
+  --faint-foreground: #7d8dd0;
+  --accent: #182458;
+  --accent-foreground: #f1f3f9;
+  --border: #1c2864;
+  --input: #2f3f8c;
+  --ring: #929fd3;
+  --sidebar: #111a44;
+  --sidebar-foreground: #f1f3f9;
+  --sidebar-primary: #495eb7;
+  --sidebar-primary-foreground: #fefefe;
+  --sidebar-accent: #1e3180;
+  --sidebar-accent-foreground: #fefefe;
+  --sidebar-border: #1c2864;
+  --sidebar-ring: #929fd3;
+  --brand: #a9b3e0;
+  --brand-foreground: #0f1634;
+  --button-primary: #495eb7;
+  --button-primary-foreground: #fefefe;
+  --button-primary-border: #495eb7;
+  --destructive: #f0806f;
+  --success: #5fbf8f;
+  --warning: #e8ad45;
+  --info: #a9b3e0;
+  --chart-1: #c2c9e6;
+  --chart-2: #929fd3;
+  --chart-3: #6b7cc4;
+  --chart-4: #495eb7;
+  --chart-5: #263fa9;
+
+  --status-backlog: #6b7cc4;
+  --status-todo: #929fd3;
+  --status-in-progress: #e8ad45;
+  --status-in-review: #5fbf8f;
+  --status-done: #c2c9e6;
+  --status-blocked: #f0806f;
+  --status-cancelled: #6b7cc4;
+  --priority-urgent: #f0806f;
+  --priority-high: #ec8f55;
+  --priority-medium: #e8ad45;
+  --priority-low: #929fd3;
+  --priority-none: #6b7cc4;
+
+  --surface-shadow: none;
+  --page-shadow: none;
+  --page-border-color: #1c2864;
+  --menu-shadow: 0 10px 28px rgb(4 7 20 / 0.6);
+  --floating-shadow: 0 24px 56px rgb(4 7 20 / 0.7);
+  --floating-border-color: #2a3a80;
+  --tooltip: #263fa9;
+  --tooltip-foreground: #fefefe;
+  --tooltip-shadow: none;
+
+  --rail-item-color: #c2c9e6;
+  --rail-item-hover-background: #1e3180;
+  --rail-item-active-background: #263fa9;
+  --rail-item-active-color: #fefefe;
+  --nav-item-color: #c2c9e6;
+  --nav-item-hover-background: #182458;
+  --nav-item-hover-color: #fefefe;
+  --nav-item-active-background: #263fa9;
+  --nav-item-active-color: #fefefe;
+  --menu-item-hover-background: #1e3180;
+  --menu-item-hover-color: #fefefe;
+  --display-chip-pressed-background: #263fa9;
+  --display-chip-pressed-color: #fefefe;
+  --switch-checked-background: #495eb7;
+
+  --issue-row-hover-background: #141e4a;
+  --issue-row-selected-background: #1e3180;
+  --issue-row-identifier-color: #a9b3e0;
+  --issue-group-header-background: #121a40;
+  --issue-group-header-hover-background: #182458;
+  --board-column-background: #0f1638;
+  --board-card-background: #121a40;
+  --board-card-hover-background: #121a40;
+  --board-card-border-color: #233172;
+  --board-card-shadow: none;
+
+  --link-color: #a9b3e0;
+  --link-decoration-color: color-mix(in srgb, #a9b3e0 40%, transparent);
+  --mention-color: #c2c9e6;
+  --highlight-background: rgb(73 94 183 / 0.45);
+  --blockquote-border-color: #495eb7;
+  --blockquote-color: #a9b3e0;
+  --hr-color: #1c2864;
+  --table-border-color: #233172;
+  --table-header-background: #121a40;
+  --table-header-color: #f1f3f9;
+  --table-row-hover-background: #141e4a;
+
+  --code-background: rgb(146 159 211 / 0.14);
+  --code-border-color: rgb(146 159 211 / 0.2);
+  --code-color: #c2c9e6;
+
+  --code-block-background: #0a0f2a;
+  --code-block-border: 1px solid #1e3180;
+  --code-block-color: #f1f3f9;
+  --code-keyword: #a9b3e0;
+  --code-string: #9fe0bd;
+  --code-comment: #7d8dd0;
+  --code-number: #ffd58a;
+  --code-function: #e0e3f2;
+  --code-property: #c2c9e6;
+  --code-variable: #fefefe;
+  --code-type: #a9b3e0;
+  --code-deletion: #ffb3a8;
+  --code-tag: #a9b3e0;
+  --code-punctuation: #7d8dd0;
+}
+
+/* Type and shape shared by both modes. */
+.theme-light,
+.theme-dark {
+  --font-ui: Inter, Helvetica Neue, Arial;
+  --font-mono: IBM Plex Mono, SF Mono, Menlo, Consolas, monospace;
+  --radius: 0.375rem;
+  --avatar-radius: calc(infinity * 1px);
+  --icon-stroke-width: 1.75;
+
+  --h1-weight: 500;
+  --h2-weight: 500;
+  --h3-weight: 500;
+  --h1-letter-spacing: -0.02em;
+  --h2-letter-spacing: -0.02em;
+  --h3-letter-spacing: -0.01em;
+  --h1-line-height: 1.15;
+  --h2-line-height: 1.25;
+  --bold-weight: 600;
+  --mention-weight: 500;
+  --table-header-weight: 500;
+  --link-underline-offset: 3px;
+  --blockquote-border-width: 2px;
+  --blockquote-style: normal;
+  --code-font-size: 0.875em;
+  --code-block-font-size: var(--text-label);
+  --code-block-padding: 0.875rem 1rem;
+  --code-block-line-height: 1.65;
+}
+
+/* The frame reads white on blue in both modes. */
+.theme-light :is([data-mc="app-rail"], [data-mc="window-toolbar"], [data-mc="tab-bar"], [data-mc="bottom-bar"]) {
+  --background: #263fa9;
+  --page-canvas: #263fa9;
+  --surface: #1e3180;
+  --surface-raised: #1e3180;
+  --muted: #1e3180;
+  --brand: #fefefe;
+  --brand-foreground: #263fa9;
+  --foreground: #fefefe;
+  --muted-foreground: #e0e3f2;
+  --faint-foreground: #c2c9e6;
+  --accent: #1e3180;
+  --accent-foreground: #fefefe;
+  --surface-hover: #1e3180;
+  --surface-selected: #1e3180;
+  --surface-selected-foreground: #fefefe;
+  --border: #3a51b2;
+  --ring: #fefefe;
+}
+
+.theme-dark :is([data-mc="app-rail"], [data-mc="window-toolbar"], [data-mc="tab-bar"], [data-mc="bottom-bar"]) {
+  --background: #111a44;
+  --page-canvas: #111a44;
+  --surface: #162358;
+  --surface-raised: #162358;
+  --muted: #162358;
+  --foreground: #fefefe;
+  --muted-foreground: #c2c9e6;
+  --faint-foreground: #929fd3;
+  --accent: #1e3180;
+  --accent-foreground: #fefefe;
+  --surface-hover: #1e3180;
+  --surface-selected: #1e3180;
+  --surface-selected-foreground: #fefefe;
+  --border: #233172;
+}
+
+/* Pixel sea: sky streaks along the top, pines on the left edge, sails mid-way along the bottom bar. */
+:root[data-theme-option-pixel-sea].theme-light {
+  --backdrop: url(images/sky-day.svg) left top repeat-x, url(images/pines-day.svg) left 0 bottom 44px no-repeat, url(images/sails-day.svg) center bottom no-repeat, url(images/sea-day.svg) left bottom repeat-x, linear-gradient(#263fa9, #2a43ab);
+  --backdrop-color: #263fa9;
+  --frame-glass-opacity: 0%;
+  --frame-glass-blur: 0px;
+}
+
+:root[data-theme-option-pixel-sea].theme-dark {
+  --backdrop: url(images/sky-night.svg) left top repeat-x, url(images/pines-night.svg) left 0 bottom 44px no-repeat, url(images/sails-night.svg) center bottom no-repeat, url(images/sea-night.svg) left bottom repeat-x, linear-gradient(#0f1634, #162358);
+  --backdrop-color: #111a44;
+  --frame-glass-opacity: 0%;
+  --frame-glass-blur: 0px;
+}
+
+/* Ocean sidebar: the navigation panel joins the frame, with a white chip for the current row. */
+:root[data-theme-option-sidebar="ocean"].theme-light [data-mc="sidebar"] {
+  background-color: #263fa9;
+  color: #fefefe;
+  --foreground: #fefefe;
+  --muted-foreground: #e0e3f2;
+  --faint-foreground: #c2c9e6;
+  --border: #263fa9;
+  --accent: #1e3180;
+  --accent-foreground: #fefefe;
+  --surface-hover: #1e3180;
+  --ring: #fefefe;
+  --nav-item-color: #e0e3f2;
+  --nav-item-hover-background: #1e3180;
+  --nav-item-hover-color: #fefefe;
+  --nav-item-active-background: #fefefe;
+  --nav-item-active-color: #263fa9;
+}
+
+:root[data-theme-option-sidebar="ocean"].theme-light [data-mc="sidebar"] [data-mc="nav-item"][data-active="true"] {
+  --muted-foreground: #495eb7;
+  --foreground: #263fa9;
+}
+
+:root[data-theme-option-sidebar="ocean"].theme-dark [data-mc="sidebar"] {
+  background-color: #162358;
+  color: #fefefe;
+  --foreground: #fefefe;
+  --muted-foreground: #c2c9e6;
+  --faint-foreground: #929fd3;
+  --border: #162358;
+  --accent: #1e3180;
+  --surface-hover: #1e3180;
+  --nav-item-color: #c2c9e6;
+  --nav-item-hover-background: #1e3180;
+  --nav-item-active-background: #263fa9;
+}
+
+:root[data-theme-option-sidebar="mist"].theme-light [data-mc="sidebar"] {
+  background-color: #f1f3f9;
+}
+
+/* --font-content can be unresolvable outside the app shell; fall back to --font-ui. */
+:root[data-theme-option-display-headings] {
+  --fathom-heading-font: Funnel Display, var(--font-content, var(--font-ui));
+  --h1-font: var(--fathom-heading-font);
+  --h2-font: var(--fathom-heading-font);
+  --h3-font: var(--fathom-heading-font);
+}
+
+:root[data-theme-option-square-corners] {
+  --radius: 0px;
+  --label-radius: 0px;
+}
+
+/* Paper code blocks: a pale blue band with ocean syntax. */
+:root[data-theme-option-code-style="paper"].theme-light {
+  --code-block-background: #f1f3f9;
+  --code-block-border: 1px solid #e0e3f2;
+  --code-block-color: #060606;
+  --code-keyword: #263fa9;
+  --code-string: #1d6f48;
+  --code-comment: #737a96;
+  --code-number: #8a5300;
+  --code-function: #1e3180;
+  --code-property: #162358;
+  --code-variable: #060606;
+  --code-type: #495eb7;
+  --code-deletion: #b42318;
+  --code-tag: #263fa9;
+  --code-punctuation: #737a96;
+}
+
+/* Issue titles share the heading face. */
+:root[data-theme-option-display-headings] [data-mc="issue-title"] {
+  font-family: var(--h1-font);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Outline buttons take an ocean rule and label. */
+[data-slot="button"][data-variant="outline"] {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* Board cards take an ocean rule on hover instead of a fill. */
+[data-mc="board-card"]:hover {
+  --board-card-border-color: var(--brand);
+}
+
+/* The current nav row reads a touch heavier. */
+[data-mc="nav-item"][data-active="true"] {
+  font-weight: 500;
+}

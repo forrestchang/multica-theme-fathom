@@ -1,0 +1,143 @@
+{
+  "apiVersion": 1,
+  "id": "fathom",
+  "name": "Fathom",
+  "author": "Jiayuan Zhang",
+  "version": "2.0.0",
+  "description": "Deep-ocean blue frame with a pixel-art sea, white pages, navy terminal code. A night sea in dark mode.",
+  "options": [
+    {
+      "id": "scene",
+      "type": "heading",
+      "label": {
+        "en": "Scene",
+        "zh-Hans": "场景",
+        "zh-Hant": "場景",
+        "ja": "シーン",
+        "ko": "장면"
+      }
+    },
+    {
+      "id": "pixel-sea",
+      "type": "toggle",
+      "label": {
+        "en": "Pixel sea in the frame",
+        "zh-Hans": "边框显示像素海景",
+        "zh-Hant": "邊框顯示像素海景",
+        "ja": "フレームにピクセルの海",
+        "ko": "프레임에 픽셀 바다"
+      },
+      "default": true
+    },
+    {
+      "id": "sidebar",
+      "type": "select",
+      "label": {
+        "en": "Sidebar",
+        "zh-Hans": "侧边栏",
+        "zh-Hant": "側邊欄",
+        "ja": "サイドバー",
+        "ko": "사이드바"
+      },
+      "default": "ocean",
+      "choices": [
+        {
+          "value": "ocean",
+          "label": {
+            "en": "Ocean",
+            "zh-Hans": "海蓝",
+            "zh-Hant": "海藍",
+            "ja": "オーシャン",
+            "ko": "오션"
+          },
+          "swatch": "#263fa9"
+        },
+        {
+          "value": "mist",
+          "label": {
+            "en": "Mist",
+            "zh-Hans": "雾白",
+            "zh-Hant": "霧白",
+            "ja": "ミスト",
+            "ko": "미스트"
+          },
+          "swatch": "#f1f3f9"
+        }
+      ]
+    },
+    {
+      "id": "shape",
+      "type": "heading",
+      "label": {
+        "en": "Shape and type",
+        "zh-Hans": "形状与字体",
+        "zh-Hant": "形狀與字體",
+        "ja": "形と書体",
+        "ko": "모양과 글꼴"
+      }
+    },
+    {
+      "id": "square-corners",
+      "type": "toggle",
+      "label": {
+        "en": "Square corners",
+        "zh-Hans": "直角",
+        "zh-Hant": "直角",
+        "ja": "角を四角に",
+        "ko": "각진 모서리"
+      },
+      "default": true
+    },
+    {
+      "id": "display-headings",
+      "type": "toggle",
+      "label": {
+        "en": "Display headings",
+        "zh-Hans": "标题使用展示字体",
+        "zh-Hant": "標題使用展示字體",
+        "ja": "見出しにディスプレイ書体",
+        "ko": "제목에 디스플레이 글꼴"
+      },
+      "default": true
+    },
+    {
+      "id": "code-style",
+      "type": "select",
+      "label": {
+        "en": "Code blocks",
+        "zh-Hans": "代码块",
+        "zh-Hant": "程式碼區塊",
+        "ja": "コードブロック",
+        "ko": "코드 블록"
+      },
+      "description": {
+        "en": "Light mode only. Dark mode always uses the terminal look.",
+        "zh-Hans": "仅影响浅色模式，深色模式始终是终端样式。",
+        "zh-Hant": "僅影響淺色模式，深色模式始終是終端樣式。"
+      },
+      "default": "terminal",
+      "choices": [
+        {
+          "value": "terminal",
+          "label": {
+            "en": "Terminal",
+            "zh-Hans": "终端",
+            "zh-Hant": "終端",
+            "ja": "ターミナル",
+            "ko": "터미널"
+          }
+        },
+        {
+          "value": "paper",
+          "label": {
+            "en": "Paper",
+            "zh-Hans": "纸面",
+            "zh-Hant": "紙面",
+            "ja": "ペーパー",
+            "ko": "페이퍼"
+          }
+        }
+      ]
+    }
+  ]
+}
